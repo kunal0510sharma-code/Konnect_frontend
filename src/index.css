@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ───────────────────────────────────────── */
+/* 🎨 THEME */
+/* ───────────────────────────────────────── */
+
+:root {
+  --primary-color: #1E6FD9;
+  --primary-hover: #1558b0;
+
+  --bg-color: #f5f7fa;
+  --bg-surface: #ffffff;
+
+  --text-main: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+
+  --border-color: #e5e7eb;
+
+  --shadow-light: 0 6px 18px rgba(0,0,0,0.06);
+  --shadow-medium: 0 10px 22px rgba(0,0,0,0.08);
+
+  --font-family: 'Inter', sans-serif;
+}
+
+/* ───────────────────────────────────────── */
+/* BASE */
+/* ───────────────────────────────────────── */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color) !important;
+  font-family: var(--font-family);
+  color: var(--text-main);
+}
+
+/* ───────────────────────────────────────── */
+/* TYPOGRAPHY */
+/* ───────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+p {
+  color: var(--text-muted);
+}
+
+/* 🔥 FIX ANT DESIGN TYPOGRAPHY PROPERLY */
+
+.ant-typography {
+  color: var(--text-main);
+}
+
+.ant-typography-secondary {
+  color: var(--text-muted);
+}
+
+/* remove weird background artifacts */
+.ant-typography,
+.ant-typography span {
+  background: transparent !important;
+}
+
+/* ───────────────────────────────────────── */
+/* CARDS */
+/* ───────────────────────────────────────── */
+
+.premium-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: var(--shadow-light);
+  padding: 20px;
+  transition: all 0.25s ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* ───────────────────────────────────────── */
+/* ANT DESIGN MENU FIX */
+/* ───────────────────────────────────────── */
+
+.ant-menu {
+  background: var(--bg-surface) !important;
+  border-right: none !important;
+}
+
+.ant-menu-light .ant-menu-item,
+.ant-menu-light .ant-menu-title-content {
+  color: var(--text-main) !important;
+}
+
+.ant-menu-light .ant-menu-item:hover {
+  background: rgba(30, 111, 217, 0.08) !important;
+}
+
+.ant-menu-light .ant-menu-item-selected {
+  background: rgba(30, 111, 217, 0.12) !important;
+  color: var(--primary-color) !important;
+  font-weight: 500;
+}
+
+.ant-menu-item svg {
+  color: inherit !important;
+}
+
+/* ───────────────────────────────────────── */
+/* SCROLLBAR */
+/* ───────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+/* 🔥 GLOBAL TEXT FIX (CRITICAL) */
+
+body, div, span, p, h1, h2, h3, h4 {
+  color: #111827;
+}
+/* 🔥 REMOVE DARK BACKGROUND LEAK */
+
+/* 🔥 Fix titles inside white cards */
+.premium-card h1,
+.premium-card h2,
+.premium-card h3,
+.premium-card h4,
+.premium-card h5 {
+  color: #111827 !important;
+}
